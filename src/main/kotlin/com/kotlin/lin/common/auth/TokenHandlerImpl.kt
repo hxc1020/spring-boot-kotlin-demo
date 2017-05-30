@@ -33,6 +33,7 @@ class TokenHandlerImpl(
 
         return Jwts.builder()
                 .setSubject(user.id.toString())
+                .setClaims(mutableMapOf("userName" to user.name, "userId" to user.id) as Map<String, Any>?)
                 .signWith(SignatureAlgorithm.HS512, secret)
                 .setExpiration(Date.from(afterOneWeek.toInstant()))
                 .compact()

@@ -23,6 +23,11 @@ spring:
     date-format: yyyy-MM-dd HH:mm:ss
   freemarker:
     content-type: application/json
+  data:
+    mongodb:
+      host: localhost
+      port: 27017
+      database: commu
 logging:
   level: debug
 
